@@ -4,15 +4,19 @@ require('dotenv/config')
 
 const app = express();
 
+
+// Import Routes
+
+const postsRoute = require('./routes/posts');
+app.use('/posts', postsRoute);
+
 //Middlewares(Its like function are execited when routes are being hit)
 
 // Routes
 app.get('/', (req,res)=>{
     res.send('we are on home')
 })
-app.get('/posts', (req,res)=>{
-    res.send('we are on post')
-})
+
 
 // connect to db
 
