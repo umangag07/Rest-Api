@@ -15,6 +15,9 @@ app.get('/posts', (req,res)=>{
 
 // connect to db
 
-mongoose.connect('mongo "mongodb+srv://cluster0.pi2rv.mongodb.net/Project 0" --nodemonGrack nodemonGrack')
+mongoose.connect('mongo "mongodb+srv://cluster0.pi2rv.mongodb.net/Project 0" --nodemonGrack nodemonGrack',{ useNewUrlParser: true },()=>{
+    console.log("connected to db");
+
+})
 //How we start listening to the server
 app.listen(3000);
