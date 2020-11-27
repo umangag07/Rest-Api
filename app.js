@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv/config')
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.get('/posts', (req,res)=>{
 
 // connect to db
 
-mongoose.connect('mongo "mongodb+srv://cluster0.pi2rv.mongodb.net/Project 0" --nodemonGrack nodemonGrack',{ useNewUrlParser: true },()=>{
+mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true },()=>{
     console.log("connected to db");
 
 })
